@@ -15,8 +15,13 @@ import torch.optim as optim
 import torch.optim.lr_scheduler as lr_scheduler
 
 
-ROOT = Path("/root")
-REPO = ROOT / "Bayesian-Invariant-Risk-Minmization"
+THIS_DIR = Path(__file__).resolve().parent
+ROOT = THIS_DIR.parent.parent
+REPO = THIS_DIR / "birm_official"
+LEGACY_REPO = Path("/root/Bayesian-Invariant-Risk-Minmization")
+if not REPO.exists() and LEGACY_REPO.exists():
+    REPO = LEGACY_REPO
+
 ARTIFACT_DIR = ROOT / "official_cifarmnist_artifacts"
 ARTIFACT_DIR.mkdir(exist_ok=True)
 os.chdir(REPO)
