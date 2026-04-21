@@ -20,6 +20,11 @@ output/
 *.tar.gz
 *.zip
 
+!qwen/results/*.csv
+!qwen/results/*.json
+!qwen/results/**/*.csv
+!qwen/results/**/*.json
+
 *.pdf
 *.png
 *.jpg

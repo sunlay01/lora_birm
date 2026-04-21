@@ -1,0 +1,2 @@
+method,runtime_min,final_best_reloaded_acc,final_pred_ones,final_total,best_acc,best_step,best_tag,best_pred_ones,best_total,seed,max_steps,eval_interval,batch,val_batch,max_length,head_lr,lora_lr,weight_decay,eta_min,ema_decay,kl_weight,max_snapshot_penalty,penalty_warmup_ratio,lora_r,lora_alpha,lora_dropout,last_n_layers
+LoRA-BIRM Snapshot Stable,85.18509149948756,0.5392539669352828,9569,24074,0.5392539669352828,175,current,9569,24074,42,400,25,8,16,128,0.0008,2e-05,0.01,1e-06,0.98,0.0001,3.0,0.6666666666666666,8,16,0.05,6

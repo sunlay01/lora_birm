@@ -26,7 +26,13 @@ The codebase is organized as a research repository rather than a polished librar
 │       └── dataset_scripts/
 └── qwen/
     ├── Untitled.ipynb
-    └── LLM.py
+    ├── LLM.py
+    ├── README.md
+    ├── run_qwen_erm_irmv1_birm_baselines.py
+    ├── run_qwen_lora_birm_only.py
+    ├── qwen_lora_birm_snapshot_run.py
+    ├── qwen_lora_birm_stable_run.py
+    └── results/
 ```
 
 ## Main Components
@@ -61,6 +67,14 @@ The codebase is organized as a research repository rather than a polished librar
     - best-snapshot model recovery
 - `LLM.py`
   - small helper wrapper around local Qwen loading
+- `run_qwen_erm_irmv1_birm_baselines.py`
+  - script used to compare `ERM`, `IRMv1`, and `BIRM` on the Qwen shortcut/reversed-test setup
+- `run_qwen_lora_birm_only.py`
+  - main standalone Qwen LoRA-BIRM training script
+- `qwen_lora_birm_snapshot_run.py`, `qwen_lora_birm_stable_run.py`
+  - snapshot-style and stabilized Qwen LoRA-BIRM variants
+- `results/`
+  - lightweight Qwen result summaries and step-history CSVs
 
 ## Environment
 
@@ -128,6 +142,21 @@ jupyter notebook qwen/Untitled.ipynb
 ```
 
 The active notebook cell is the LoRA-BIRM Snapshot version. Historical notebook cells were intentionally disabled to avoid running outdated code paths during `Run All`.
+
+### Qwen Scripts
+
+Examples:
+
+```bash
+python qwen/run_qwen_erm_irmv1_birm_baselines.py
+python qwen/run_qwen_lora_birm_only.py
+python qwen/qwen_lora_birm_stable_run.py
+```
+
+Notes:
+
+- the Qwen scripts assume local parquet data files and a local/offline model environment
+- only lightweight CSV/JSON summaries are tracked in git; checkpoints are excluded
 
 ## What Is Excluded
 

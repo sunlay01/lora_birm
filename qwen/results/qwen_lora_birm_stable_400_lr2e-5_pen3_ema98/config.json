@@ -1,0 +1,20 @@
+{
+  "seed": 42,
+  "max_steps": 400,
+  "eval_interval": 25,
+  "batch": 8,
+  "val_batch": 16,
+  "max_length": 128,
+  "head_lr": 0.0008,
+  "lora_lr": 2e-05,
+  "weight_decay": 0.01,
+  "eta_min": 1e-06,
+  "ema_decay": 0.98,
+  "kl_weight": 0.0001,
+  "max_snapshot_penalty": 3.0,
+  "penalty_warmup_ratio": 0.6666666666666666,
+  "lora_r": 8,
+  "lora_alpha": 16,
+  "lora_dropout": 0.05,
+  "last_n_layers": 6
+}
