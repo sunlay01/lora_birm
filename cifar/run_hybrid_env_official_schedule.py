@@ -71,6 +71,7 @@ def run_one(base_config, variant_name, seed):
             variance_penalty = torch.tensor(0.0, device=DEVICE)
             grad_penalty = torch.tensor(0.0, device=DEVICE)
             train_penalty = torch.tensor(0.0, device=DEVICE)
+            worst_env_loss = train_nll
             current_penalty_weight = 0.0
             stage = "erm_warmup"
         else:

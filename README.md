@@ -211,14 +211,17 @@ The thesis wording was already tightened and pushed to GitHub in commit `7ccb9c9
 
 ### What To Run For Spurious CIFAR
 
+See `cifar/README.md` first. That file is the current source of truth for which CIFAR scripts are active entrypoints and which ones are legacy one-off wrappers.
+
 Start from these scripts:
 
 ```bash
-python cifar/official_cifarmnist_comparison.py
 python cifar/run_hybrid_env_official_schedule.py
 python cifar/validate_notebook_peak_multiseed.py
+python cifar/run_hybrid_worst_env_schedule.py
 ```
 
+Use `python cifar/official_cifarmnist_comparison.py` only when you explicitly need the old baseline / negative-control route.
 The CIFAR code expects local data in paths such as:
 
 - `/root/data/cifar-10-batches-py`
