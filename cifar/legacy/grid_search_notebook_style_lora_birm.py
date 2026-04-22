@@ -3,6 +3,8 @@ from dataclasses import replace
 
 import pandas as pd
 
+import _pathfix  # noqa: F401
+
 from official_cifarmnist_comparison import CONFIG, ExperimentConfig, run_lora_method
 
 

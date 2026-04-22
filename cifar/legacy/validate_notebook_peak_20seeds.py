@@ -4,6 +4,8 @@ from dataclasses import asdict
 import pandas as pd
 import torch
 
+import _pathfix  # noqa: F401
+
 from official_cifarmnist_comparison import (
     ARTIFACT_DIR,
     DEVICE,

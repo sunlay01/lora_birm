@@ -17,7 +17,7 @@ import torch.optim.lr_scheduler as lr_scheduler
 
 THIS_DIR = Path(__file__).resolve().parent
 ROOT = THIS_DIR.parent.parent
-REPO = THIS_DIR / "birm_official"
+REPO = THIS_DIR.parent / "birm_official"
 LEGACY_REPO = Path("/root/Bayesian-Invariant-Risk-Minmization")
 if not REPO.exists() and LEGACY_REPO.exists():
     REPO = LEGACY_REPO

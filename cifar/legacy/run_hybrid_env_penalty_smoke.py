@@ -1,3 +1,5 @@
+import _pathfix  # noqa: F401
+
 from official_cifarmnist_comparison import ExperimentConfig, build_final_table, run_all
 
 
