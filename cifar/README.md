@@ -116,7 +116,8 @@ Only run the old route when you explicitly need a negative result or baseline re
 
 ## Legacy / One-Off Scripts
 
-These are not the preferred first entrypoints anymore:
+These are not the preferred first entrypoints anymore. They now live under
+`cifar/legacy/`:
 
 - `grid_search_notebook_style_lora_birm.py`
 - `official_cifarmnist_lora_v2.py`

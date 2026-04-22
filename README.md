@@ -15,11 +15,17 @@ The codebase is organized as a research repository rather than a polished librar
 ├── cmnist/
 │   └── cmnist.ipynb
 ├── cifar/
+│   ├── README.md
 │   ├── official_cifarmnist_comparison.py
-│   ├── official_cifarmnist_lora_v2.py
-│   ├── run_*.py
-│   ├── validate_*.py
-│   ├── grid_search_*.py
+│   ├── run_hybrid_env_official_schedule.py
+│   ├── run_hybrid_worst_env_schedule.py
+│   ├── run_hybrid_env_weight_grid.py
+│   ├── validate_notebook_peak_multiseed.py
+│   ├── legacy/
+│   │   ├── official_cifarmnist_lora_v2.py
+│   │   ├── run_*.py
+│   │   ├── validate_*.py
+│   │   └── grid_search_*.py
 │   └── birm_official/
 │       ├── model.py
 │       ├── utils.py
@@ -47,12 +53,16 @@ The codebase is organized as a research repository rather than a polished librar
 
 - `official_cifarmnist_comparison.py`
   - main comparison script for ERM, IRMv1, BIRM, and our LoRA-style extensions on Spurious CIFAR / CifarMnist
-- `official_cifarmnist_lora_v2.py`
-  - LoRA-based BIRM variant on the CifarMnist setting
-- `run_notebook_style_*.py`, `run_peak_then_stabilize_hybrid.py`, `run_hybrid_env_*.py`
-  - ablations, stabilization runs, hybrid objectives, and snapshot-style search scripts
+- `run_hybrid_env_official_schedule.py`
+  - main CIFAR screening script for the current hybrid-objective route
+- `run_hybrid_worst_env_schedule.py`
+  - stability stress test for worst-environment weighting
+- `run_hybrid_env_weight_grid.py`
+  - weight-attribution / ablation runner for the hybrid objective
 - `validate_notebook_peak_*.py`
   - multiseed validation utilities
+- `legacy/`
+  - older notebook-style, multiseed, and one-off CIFAR scripts kept for archaeology and narrow diagnostics
 - `birm_official/`
   - minimal vendored dependency subset from the original BIRM codebase required by the CIFAR scripts in this repository
 
