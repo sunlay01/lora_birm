@@ -141,6 +141,7 @@ python cifar/validate_notebook_peak_multiseed.py
 Notes:
 
 - the CIFAR scripts now prefer the vendored `cifar/birm_official/` dependency tree inside this repository
+- the vendored CIFAR utilities now load `coco_dataset` only when a `ColoredObject` entrypoint is used, so missing `ColoredObject` extras do not block the default `CifarMnist` routes
 - if an old local checkout of `Bayesian-Invariant-Risk-Minmization` exists under `/root`, the scripts can still fall back to it
 
 ### Qwen Notebook
@@ -183,6 +184,10 @@ The repository intentionally excludes:
 ## Provenance Note
 
 The `cifar/birm_official/` folder contains the minimal subset of the original BIRM implementation needed to run the Spurious CIFAR scripts in this repository. We keep it here only to make this research repo self-contained enough to execute the main CIFAR experiments.
+
+The vendored `utils.py` is also patched so `ColoredObject`-specific dependencies
+are imported lazily. This keeps the default `CifarMnist` path runnable in a
+minimal checkout that does not include the optional `coco_dataset` module.
 
 ## Cluster Handoff (2026-04-22)
 

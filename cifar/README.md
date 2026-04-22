@@ -155,3 +155,14 @@ Minimum statistics to report back:
 - worst-group or `test_minacc` style metric
 - best-step distribution
 - runtime per seed
+
+## Dependency Note
+
+The vendored `birm_official/utils.py` now imports `coco_dataset` lazily.
+
+Implication:
+
+- default `CifarMnist` entrypoints remain runnable in a checkout that does not
+  include the optional `ColoredObject` dependency
+- `ColoredObject` entrypoints will still raise a clear error until
+  `coco_dataset` is actually available

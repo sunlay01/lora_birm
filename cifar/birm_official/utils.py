@@ -1,7 +1,6 @@
 import argparse
 import random
 from cm_spurious_dataset import get_data_loader_cifarminst
-from coco_dataset import get_spcoco_dataset
 import math
 import numpy as np
 import torch
@@ -11,6 +10,11 @@ from data import AntiReg
 import os
 import sys
 from torch import nn, optim, autograd
+
+try:
+    from coco_dataset import get_spcoco_dataset
+except ModuleNotFoundError:
+    get_spcoco_dataset = None
 
 def return_model(flags):
     model_type = None
@@ -513,6 +517,11 @@ class COCOcolor_LYPD(LYDataProvider):
 
     def preprocess_data(self):
         sp_ratio_list = [float(x) for x in "0.999_0.7_0.1".split("_")]
+        if get_spcoco_dataset is None:
+            raise ModuleNotFoundError(
+                "coco_dataset is required for ColoredObject experiments, "
+                "but it is not present in this repository checkout."
+            )
         self.train_dataset, self.test_dataset = get_spcoco_dataset(
             sp_ratio_list=sp_ratio_list,
             noise_ratio=0.05,
