@@ -20,9 +20,18 @@ os.environ.pop("https_proxy", None)
 os.environ.pop("HF_ENDPOINT", None)
 os.environ.setdefault("TOKENIZERS_PARALLELISM", "false")
 
-DEFAULT_RUN_NAME = "qwen_lora_birm_stable_400_lr2e-5_pen3_ema98"
-SEED = int(os.getenv("QWEN_SEED", "42"))
-MAX_STEPS = 400
+
+def get_env_int(name, default):
+    value = os.getenv(name)
+    return default if value is None else int(value)
+
+
+DEFAULT_MAX_STEPS = 400
+SEED = get_env_int("QWEN_SEED", 42)
+MAX_STEPS = get_env_int("QWEN_MAX_STEPS", DEFAULT_MAX_STEPS)
+if MAX_STEPS <= 0:
+    raise ValueError(f"QWEN_MAX_STEPS must be positive, got {MAX_STEPS}")
+DEFAULT_RUN_NAME = f"qwen_lora_birm_stable_{MAX_STEPS}_lr2e-5_pen3_ema98"
 EVAL_INTERVAL = 25
 BATCH = 8
 VAL_BATCH = 16
