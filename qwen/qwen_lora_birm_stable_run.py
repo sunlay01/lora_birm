@@ -20,7 +20,8 @@ os.environ.pop("https_proxy", None)
 os.environ.pop("HF_ENDPOINT", None)
 os.environ.setdefault("TOKENIZERS_PARALLELISM", "false")
 
-SEED = 42
+DEFAULT_RUN_NAME = "qwen_lora_birm_stable_400_lr2e-5_pen3_ema98"
+SEED = int(os.getenv("QWEN_SEED", "42"))
 MAX_STEPS = 400
 EVAL_INTERVAL = 25
 BATCH = 8
@@ -39,9 +40,14 @@ LORA_ALPHA = 16
 LORA_DROPOUT = 0.05
 LAST_N_LAYERS = 6
 
-RUN_NAME = "qwen_lora_birm_stable_400_lr2e-5_pen3_ema98"
-OUT_DIR = Path("/root/qwen_lora_birm_tuning") / RUN_NAME
-MODEL_CACHE_DIR = Path("/root/autodl-tmp/modelscope_cache")
+RUN_NAME = os.getenv(
+    "QWEN_RUN_NAME",
+    DEFAULT_RUN_NAME if SEED == 42 else f"{DEFAULT_RUN_NAME}_seed{SEED}",
+)
+OUT_ROOT = Path(os.getenv("QWEN_OUT_ROOT", "/root/qwen_lora_birm_tuning"))
+OUT_DIR = OUT_ROOT / RUN_NAME
+MODEL_CACHE_DIR = Path(os.getenv("QWEN_MODEL_CACHE_DIR", "/root/autodl-tmp/modelscope_cache"))
+DATA_PARQUET = Path(os.getenv("QWEN_DATA_PARQUET", "/root/train-00000-of-00001.parquet"))
 STEP_HISTORY_CSV = OUT_DIR / "step_history.csv"
 SUMMARY_CSV = OUT_DIR / "summary.csv"
 BEST_HEAD_PATH = OUT_DIR / "best_head.pt"
@@ -62,7 +68,7 @@ def append_csv(path, row):
 
 def prepare_data():
     print("[1/5] Loading parquet and building reversed shortcut environment...", flush=True)
-    df = pd.read_parquet("/root/train-00000-of-00001.parquet")
+    df = pd.read_parquet(DATA_PARQUET)
     if "comment_text" in df.columns:
         df.rename(columns={"comment_text": "text"}, inplace=True)
     if "target" in df.columns:
@@ -221,6 +227,7 @@ def main():
     set_seed(SEED)
     OUT_DIR.mkdir(parents=True, exist_ok=True)
     config = {
+        "run_name": RUN_NAME,
         "seed": SEED,
         "max_steps": MAX_STEPS,
         "eval_interval": EVAL_INTERVAL,
@@ -239,6 +246,9 @@ def main():
         "lora_alpha": LORA_ALPHA,
         "lora_dropout": LORA_DROPOUT,
         "last_n_layers": LAST_N_LAYERS,
+        "data_parquet": str(DATA_PARQUET),
+        "out_dir": str(OUT_DIR),
+        "model_cache_dir": str(MODEL_CACHE_DIR),
     }
     CONFIG_JSON.write_text(json.dumps(config, indent=2), encoding="utf-8")
 
