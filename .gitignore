@@ -35,3 +35,9 @@ output/
 *.bak
 *.tmp
 *~
+
+.pydeps/
+docs/thesis/scripts/.mplconfig/
+
+!docs/thesis/figures/cifar_snapshot_story.pdf
+!docs/thesis/figures/cifar_snapshot_story.png
