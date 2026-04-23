@@ -24,6 +24,8 @@ output/
 !qwen/results/*.json
 !qwen/results/**/*.csv
 !qwen/results/**/*.json
+!cmnist/results/*.csv
+!cifar/results/*.csv
 
 *.pdf
 *.png

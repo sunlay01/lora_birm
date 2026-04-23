@@ -1,0 +1,2 @@
+method,num_seeds,best_ood_acc_mean_pct,best_ood_acc_std_pct,best_ood_acc_min_pct,runtime_mean_sec,runtime_std_sec,runtime_min_sec,runtime_total_sec,best_step_mean,best_step_min,best_step_max
+IRMv1 -> LoRA-BIRM,5,59.220004,4.599305,52.900004,128.776865,0.906989,127.153062,643.884325,329.800000,100,599

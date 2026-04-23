@@ -1,0 +1,21 @@
+method,seed,run_id,best_ood_acc_pct,runtime_sec,seed_note
+Full-BIRM (Official),run_1,1,67.800000,20.890000,original executed notebook output did not record explicit seeds; using run order
+Full-BIRM (Official),run_2,2,68.290000,23.230000,original executed notebook output did not record explicit seeds; using run order
+Full-BIRM (Official),run_3,3,68.730000,21.360000,original executed notebook output did not record explicit seeds; using run order
+Full-BIRM (Official),run_4,4,70.070000,23.150000,original executed notebook output did not record explicit seeds; using run order
+Full-BIRM (Official),run_5,5,69.930000,21.020000,original executed notebook output did not record explicit seeds; using run order
+IRMv1,run_1,1,66.800000,5.700000,original executed notebook output did not record explicit seeds; using run order
+IRMv1,run_2,2,71.120000,5.600000,original executed notebook output did not record explicit seeds; using run order
+IRMv1,run_3,3,68.030000,5.380000,original executed notebook output did not record explicit seeds; using run order
+IRMv1,run_4,4,69.140000,5.740000,original executed notebook output did not record explicit seeds; using run order
+IRMv1,run_5,5,68.460000,5.320000,original executed notebook output did not record explicit seeds; using run order
+LoRA-BIRM (Route A),run_1,1,70.160000,23.860000,original executed notebook output did not record explicit seeds; using run order
+LoRA-BIRM (Route A),run_2,2,66.750000,23.380000,original executed notebook output did not record explicit seeds; using run order
+LoRA-BIRM (Route A),run_3,3,69.470000,23.510000,original executed notebook output did not record explicit seeds; using run order
+LoRA-BIRM (Route A),run_4,4,66.320000,24.240000,original executed notebook output did not record explicit seeds; using run order
+LoRA-BIRM (Route A),run_5,5,68.500000,23.290000,original executed notebook output did not record explicit seeds; using run order
+LoRA-BIRM (Route B),run_2,2,71.240000,19.890000,original executed notebook output did not record explicit seeds; using run order
+LoRA-BIRM (Route B),run_3,3,71.110000,19.810000,original executed notebook output did not record explicit seeds; using run order
+LoRA-BIRM (Route B),run_4,4,69.420000,19.810000,original executed notebook output did not record explicit seeds; using run order
+LoRA-BIRM (Route B),run_5,5,69.090000,19.820000,original executed notebook output did not record explicit seeds; using run order
+LoRA-BIRM (Route B),run_5,5,70.810000,19.800000,original executed notebook output did not record explicit seeds; using run order

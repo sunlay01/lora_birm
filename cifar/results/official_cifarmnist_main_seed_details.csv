@@ -1,0 +1,26 @@
+method,seed,best_ood_acc_pct,best_step,runtime_sec,final_ood_acc_pct,source
+ERM,11,23.600000,0,315.997738,10.800000,official_main_subprocess
+ERM,17,54.100000,0,315.337643,11.400001,official_main_subprocess
+ERM,23,52.700000,0,315.423029,11.600000,official_main_subprocess
+ERM,29,39.300000,0,311.713830,11.200000,official_main_subprocess
+ERM,37,46.300000,0,312.524846,14.900000,official_main_subprocess
+IRMv1,11,57.600000,100,319.497504,39.200002,official_main_subprocess
+IRMv1,17,57.500000,100,322.069351,32.800000,official_main_subprocess
+IRMv1,23,55.400000,200,321.284660,31.800002,official_main_subprocess
+IRMv1,29,52.100000,200,320.462534,27.900000,official_main_subprocess
+IRMv1,37,59.600000,100,317.998281,34.800002,official_main_subprocess
+BIRM,11,59.300000,500,352.620877,55.200005,official_main_subprocess
+BIRM,17,57.600000,800,348.445099,54.800004,official_main_subprocess
+BIRM,23,60.700000,300,345.005696,57.000005,official_main_subprocess
+BIRM,29,56.500000,500,341.429261,49.200000,official_main_subprocess
+BIRM,37,62.600000,500,340.895489,58.900005,official_main_subprocess
+LoRA-BIRM Route A,11,50.000000,100,345.020018,50.000000,official_cifarmnist_lora
+LoRA-BIRM Route A,17,57.800001,0,348.476191,50.000000,official_cifarmnist_lora
+LoRA-BIRM Route A,23,50.000000,100,344.375941,50.000000,official_cifarmnist_lora
+LoRA-BIRM Route A,29,50.000000,0,351.258398,50.000000,official_cifarmnist_lora
+LoRA-BIRM Route A,37,50.000000,100,350.209910,50.000000,official_cifarmnist_lora
+LoRA-BIRM Route B,11,50.800002,200,338.081805,50.000000,official_cifarmnist_lora
+LoRA-BIRM Route B,17,60.500002,0,338.827883,50.200003,official_cifarmnist_lora
+LoRA-BIRM Route B,23,50.000000,100,338.415458,40.200001,official_cifarmnist_lora
+LoRA-BIRM Route B,29,50.000000,0,336.112721,48.800004,official_cifarmnist_lora
+LoRA-BIRM Route B,37,50.200003,0,351.861929,48.500001,official_cifarmnist_lora

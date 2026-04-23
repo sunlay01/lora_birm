@@ -1,0 +1,5 @@
+method,num_runs,best_ood_acc_mean_pct,best_ood_acc_std_pct,best_ood_acc_min_pct,runtime_mean_sec,runtime_std_sec,runtime_min_sec,runtime_total_sec
+Full-BIRM (Official),5,68.964000,0.896696,67.800000,21.930000,1.040481,20.890000,109.650000
+IRMv1,5,68.710000,1.425903,66.800000,5.548000,0.169044,5.320000,27.740000
+LoRA-BIRM (Route A),5,68.240000,1.494885,66.320000,23.656000,0.350463,23.290000,118.280000
+LoRA-BIRM (Route B),5,70.334000,0.898056,69.090000,19.826000,0.032619,19.800000,99.130000
